@@ -1,0 +1,22 @@
+
+All tested in Redhat environtment
+
+install go:
+wget https://go.dev/dl/go1.23.0.linux-amd64.tar.gz
+tar -C /usr/local -xzf go1.23.linux-amd64.tar.gz
+echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
+source ~/.bashrc
+
+install gcc:
+sudo dnf groupinstall "Development Tools" -y
+sudo dnf install glibc-devel -y
+gcc --version
+
+hosts file:
+nano /etc/hosts and add --> 20.6.105.39 voltage-pp-0000.opentext.co.id
+urlPolicy = https://voltage-pp-0000.opentext.co.id/policy/clientPolicy.xml
+trusStore = /opt/simple-api/trustStore-cloud
+cache = /opt/simple-api/cache
+identity = developer@ori.co.id
+sharedSecret = voltage123
+format = alphanumeric
