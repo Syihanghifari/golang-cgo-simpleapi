@@ -20,3 +20,12 @@ cache = /opt/simple-api/cache
 identity = developer@ori.co.id
 sharedSecret = voltage123
 format = alphanumeric
+
+create .a file:
+gcc -c voltage_lib/voltage_fpe.c -Ivoltage_lib -o voltage_lib/voltage_fpe.o
+ar rcs voltage_lib/libvoltagefpe.a voltage_lib/voltage_fpe.o
+/*
+#cgo CFLAGS: -I./voltage_lib
+#cgo LDFLAGS: -L./voltage_lib -lvoltagefpe -lvibesimpledyn -lpthread -Wl,-rpath=./voltage_lib
+#include "voltage_fpe.h"
+*/
